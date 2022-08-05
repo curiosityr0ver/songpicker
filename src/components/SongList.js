@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux/es/exports';
 
-const SongList = () => {
+
+const SongList = (props) => {
+
+    useEffect(() => {
+        console.log(props);
+    });
+
     return (
         <div>
             Kolaveri Di
@@ -10,7 +16,7 @@ const SongList = () => {
 }
 
 const matchStateToProps = (state) => {
-    console.log(state.songs);
+
     return {
         songs: state.songs
     }
