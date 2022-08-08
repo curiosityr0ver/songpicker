@@ -22,16 +22,30 @@ const songsReducer = () => {
 }
 
 const selectedSongReducer = (selectedSong = null, action) => {
-    if (action.type == "SONG_SELECTED") {
+    if (action.type === "SONG_SELECTED") {
         return action.payload
     } else {
         return selectedSong
     }
 }
 
+const counterReducer = (count = 0, action) => {
+
+    if (action.type === "COUNT_INCREMENT") {
+        return count + 1
+    }
+    if (action.type === "COUNT_DECREMENT") {
+        return count - 1
+    } else {
+        return count
+    }
+
+}
+
 export default combineReducers(
     {
         songs: songsReducer,
-        selectedSong: selectedSongReducer
+        selectedSong: selectedSongReducer,
+        count: counterReducer
     }
 )
