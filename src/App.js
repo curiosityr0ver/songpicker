@@ -7,7 +7,7 @@ import SongList from './components/SongList';
 
 const App = () => {
     return (
-        <div className='ui grid'>
+        <div className='ui grid' style={{ "padding": "10px" }}>
             <div className='ui row'>
                 <div className='column eight wide'>
                     <SongList />

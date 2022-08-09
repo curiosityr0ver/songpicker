@@ -1,3 +1,4 @@
+
 import { combineReducers } from 'redux';
 
 const songsReducer = () => {
@@ -32,10 +33,10 @@ const selectedSongReducer = (selectedSong = null, action) => {
 const counterReducer = (count = 0, action) => {
 
     if (action.type === "COUNT_INCREMENT") {
-        return count + 1
+        return action.payload
     }
     if (action.type === "COUNT_DECREMENT") {
-        return count - 1
+        return action.payload
     } else {
         return count
     }
